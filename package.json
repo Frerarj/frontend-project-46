@@ -1,0 +1,20 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Gendiff — the second Hexlet project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frerarj/frontend-project-46.git"
+  },
+  "author": "Anastasia Simanova (Frerarj)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Frerarj/frontend-project-46/issues"
+  },
+  "homepage": "https://github.com/Frerarj/frontend-project-46#readme"
+}
