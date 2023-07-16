@@ -7,7 +7,7 @@ const symbols = {
   nested: ' ',
 };
 
-const createIndent = (depth) => '  '.repeat(depth * 4 - 2);
+const createIndent = (depth) => ' '.repeat(depth * 4 - 2);
 
 const stringify = (value, depth) => {
   if (!_.isObject(value) || value === null) {
