@@ -1,4 +1,4 @@
-import _ from "lodash";
+import _ from 'lodash';
 
 const compare = (obj1, obj2) => {
   const keys1 = _.keys(obj1);
@@ -10,20 +10,20 @@ const compare = (obj1, obj2) => {
       return {
         key,
         value: obj2[key],
-        type: "added",
+        type: 'added',
       };
     }
     if (!_.has(obj2, key)) {
       return {
         key,
         value: obj1[key],
-        type: "deleted",
+        type: 'deleted',
       };
     }
     if (_.isObject(obj1[key]) && _.isObject(obj2[key])) {
       return {
         key,
-        type: "nested",
+        type: 'nested',
         children: compare(obj1[key], obj2[key]),
       };
     }
@@ -32,13 +32,13 @@ const compare = (obj1, obj2) => {
         key,
         valueBefore: obj1[key],
         valueAfter: obj2[key],
-        type: "changed",
+        type: 'changed',
       };
     }
     return {
       key,
       value: obj1[key],
-      type: "unchanged",
+      type: 'unchanged',
     };
   });
   return result;
