@@ -9,7 +9,7 @@ const symbols = {
 
 const createIndent = (depth) => ' '.repeat(depth * 4 - 2);
 
-const stringify = (value, depth) => {
+const stringify = (value, depth = 1) => {
   if (!_.isObject(value) || value === null) {
     return String(value);
   }
@@ -22,7 +22,7 @@ const stringify = (value, depth) => {
   return result.join('\n');
 };
 
-const makeStylish = (value, depth = 1) => {
+const stylish = (value, depth = 1) => {
   switch (value.type) {
     case 'added':
     case 'deleted':
@@ -38,13 +38,13 @@ const makeStylish = (value, depth = 1) => {
       } ${value.key}: ${stringify(value.valueAfter, depth)}`;
     case 'nested':
       return `${createIndent(depth)}  ${value.key}: {\n${value.children
-        .map((val) => makeStylish(val, depth + 1))
+        .map((val) => stylish(val, depth + 1))
         .join('\n')}\n ${createIndent(depth)} }`;
     default:
       throw new Error(`Unknown type: ${value.type}`);
   }
 };
 
-const makeFinalView = (diff) => `{\n${diff.map((value) => makeStylish(value, 1)).join('\n')}\n}`;
+const makeFinalView = (diff) => `{\n${diff.map((value) => stylish(value, 1)).join('\n')}\n}`;
 
 export default makeFinalView;
