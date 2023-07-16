@@ -15,10 +15,10 @@ const stringify = (value, depth = 1) => {
   }
 
   const entries = Object.entries(value).map(
-    ([key, value1]) => `${createIndent(depth + 1)}${key}: ${stringify(value1, depth + 1)}`,
+    ([key, value1]) => `${createIndent(depth + 1)}  ${key}: ${stringify(value1, depth + 1)}`,
   );
 
-  const result = ['{', ...entries, `${createIndent(depth)}}`];
+  const result = ['{', ...entries, `  ${createIndent(depth)}}`];
   return result.join('\n');
 };
 
