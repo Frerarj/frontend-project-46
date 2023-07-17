@@ -81,6 +81,6 @@ The following demonstrates how this utility compares JSON and YML files and gene
 
 | Formatting method | Demo |
 | --- | --- |
-| 1. `stylish` (default) | |
-| 2. `plain` | |
-| 3. `json` | |
+| 1. `stylish` (default) | [![asciicast](https://asciinema.org/a/597258.svg)](https://asciinema.org/a/597258) |
+| 2. `plain` | [![asciicast](https://asciinema.org/a/597260.svg)](https://asciinema.org/a/597260) |
+| 3. `json` | [![asciicast](https://asciinema.org/a/597261.svg)](https://asciinema.org/a/597261) |
