@@ -45,3 +45,9 @@ test('genDiff plain formatting on nested JSON & YML files', () => {
   const expected = readFile('expected-plain.txt');
   expect(current).toEqual(expected);
 });
+
+test('genDiff JSON formatting on nested JSON & YML files', () => {
+  const current = genDiff(getFixturePath('nestedFile1.yml'), getFixturePath('nestedFile2.json'), 'json');
+  const expected = readFile('expected-json.txt');
+  expect(current).toEqual(expected);
+});
