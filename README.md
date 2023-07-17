@@ -64,13 +64,23 @@ To install the *Generate differences* project, follow these steps:
    sudo npm link
    ```
 4. Once the installation is complete, use `gendiff -h` command to see the utility reference.
+   ```
+   Usage: gendiff [options] <filepath1> <filepath2>
 
+   Compares two configuration files and shows a difference.
+
+   Options:
+   -V, --version        output the version number
+   -f, --format <type>  output format (default: "stylish")
+   -h, --help           output usage information
+   ```
+    
 ## How it works
 
 The following demonstrates how this utility compares JSON and YML files and generates the output in various formats.
 
 | Formatting method | Demo |
 | --- | --- |
-| 1. `stylish` | |
+| 1. `stylish` (default) | |
 | 2. `plain` | |
 | 3. `json` | |
