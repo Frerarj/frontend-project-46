@@ -5,7 +5,7 @@
 **Utility features:**
 
 * Supports different input formats: YAML, JSON.
-* Generates output as `plain` text, `style` and `json`.
+* Generates output as `plain` text, `stylish` and `json`.
 
 **Output example:**
 
