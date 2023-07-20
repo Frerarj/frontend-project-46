@@ -23,23 +23,19 @@ const stringify = (value, depth = 1) => {
 };
 
 const makeStylish = (value, depth = 1) => {
+  const indent = createIndent(depth);
+  const valueBefore = stringify(value.valueBefore, depth);
+  const valueAfter = stringify(value.valueAfter, depth);
+
   switch (value.type) {
     case 'added':
     case 'deleted':
     case 'unchanged':
-      return `${createIndent(depth)}${symbols[value.type]} ${
-        value.key
-      }: ${stringify(value.value, depth)}`;
+      return `${indent}${symbols[value.type]} ${value.key}: ${stringify(value.value, depth)}`;
     case 'changed':
-      return `${createIndent(depth)}${symbols.deleted} ${
-        value.key
-      }: ${stringify(value.valueBefore, depth)}\n${createIndent(depth)}${
-        symbols.added
-      } ${value.key}: ${stringify(value.valueAfter, depth)}`;
+      return `${indent}${symbols.deleted} ${value.key}: ${valueBefore}\n${indent}${symbols.added} ${value.key}: ${valueAfter}`;
     case 'nested':
-      return `${createIndent(depth)}  ${value.key}: {\n${value.children
-        .map((val) => makeStylish(val, depth + 1))
-        .join('\n')}\n ${createIndent(depth)} }`;
+      return `${indent}  ${value.key}: {\n${value.children.map((val) => makeStylish(val, depth + 1)).join('\n')}\n ${indent} }`;
     default:
       throw new Error(`Unknown type: ${value.type}`);
   }

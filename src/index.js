@@ -7,7 +7,7 @@ import parser from './parsers.js';
 
 const getAbsolutePath = (filepath) => path.resolve(process.cwd(), filepath);
 const readFile = (filepath) => fs.readFileSync(getAbsolutePath(filepath), 'utf-8');
-const getFileExtention = (filepath) => path.extname(filepath);
+const getFileExtention = (filepath) => filepath.split('.')[1];
 
 const genDiff = (file1, file2, formatting = 'stylish') => {
   const content1 = readFile(file1);
